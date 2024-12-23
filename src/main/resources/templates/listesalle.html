@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Salles Disponibles</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="/membres">Nos Membres</a></li>
+            <li><a href="/activites">Nos Activités</a></li>
+            <li><a href="/inscriptions">Gestion des Inscriptions</a></li>
+            <li><a href="/paiements">Gestion des Paiements</a></li>
+            <li><a href="/salles">Salles Disponibles</a></li>
+            <li><a href="/reservations">Gestion de Réservations</a></li>
+            <li><a href="/logout">Se Déconnecter</a></li>
+        </ul>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+        <br>
+        <h1>Salles Disponibles</h1>
+		<div class="add-button-container">
+			<a href="/salles/ajouter" class="add-button">Ajouter une nouvelle salle</a>
+		</div>
+	</section>
+	
+	<div class="containersalle">
+	    <div class="row">
+	        <div th:each="salle : ${listSalles}" class="col-md-4 mb-4">
+	            <div class="salle-card">
+	                <!-- Image de la salle -->
+	                <img th:src="@{${salle.type} != null ? '/images/' + ${salle.type} + '.png' : '/images/default.jpg'}"
+	                     alt="Image de la salle" class="salle-image">
+	                
+	                <!-- Détails de la salle -->
+	                <div class="salle-details">
+	                    <h3 th:text="${salle.nom}">Nom de la Salle</h3>
+	                    <p><strong>Type:</strong> <span th:text="${salle.type}">Type de salle</span></p>
+	                    <p><strong>Capacité:</strong> <span th:text="${salle.capacite} + ' personnes'">Capacité de la salle</span></p>
+	                    <p><strong>Emplacement:</strong> <span th:text="${salle.emplacement}">Emplacement de la salle</span></p>
+	                </div>
+
+	                <!-- Actions -->
+	                <div class="salle-actions">
+	                    <a th:href="@{/salles/edit/{idsalle}(idsalle=${salle.idsalle})}" class="btn btn-warning btn-sm">Modifier</a>
+	                    <a th:href="@{/salles/delete/{idsalle}(idsalle=${salle.idsalle})}" class="btn btn-danger btn-sm"
+	                       onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette salle ?')">Supprimer</a>
+	                </div>
+					<div class="salle-actions">
+						<a href="/reservations/ajouter" class="add-button">Réserver la salle</a>
+					</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+		
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>nouveau paiement</title>
+    <link rel="stylesheet" href="/styles.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="/membres">Nos Membres</a></li>
+            <li><a href="/activites">Nos Activités</a></li>
+            <li><a href="/inscriptions">Gestion des Inscriptions</a></li>
+            <li><a href="/paiements">Gestion des Paiements</a></li>
+            <li><a href="/salles">Salles Disponibles</a></li>
+            <li><a href="/reservations">Gestion de Réservations</a></li>
+            <li><a href="/logout">Se Déconnecter</a></li>
+        </ul>
+    </nav>
+    
+    <section class="introduction">
+		<br>
+        <h1>Ajouter une nouveau paiement</h1>
+    </section>
+    
+    <div class="container mt-5">
+        <form th:action="@{/paiements/save}" th:object="${paiement}" method="post">
+            <div class="mb-3">
+                <label for="membre">Membre</label><br>
+				<select id="membre" th:field="*{membre}" required>
+					<option value="" disabled selected>Sélectionner un membre</option>
+					<option th:each="membre : ${membres}" 
+						    th:value="${membre.idmem}"  
+							th:text="${membre.nom} + ' ' + ${membre.prenom}">
+					</option>
+				</select>
+				<div th:if="${#fields.hasErrors('membre')}" th:errors="*{membre}"></div>
+            </div>
+            
+			<div class="mb-3">
+				<label for="montant">Montant</label><br>
+				<input type="text" id="montant" th:field="*{montant}" required/>
+			</div>
+			<div th:if="${#fields.hasErrors('montant')}" th:errors="*{montant}"></div>
+			
+			<div class="mb-3">
+				<label for="datePaiement">Date de paiement</label><br>
+				<input type="date" id="datePaiement" th:field="*{datePaiement}" required/>
+			</div>
+			<div th:if="${#fields.hasErrors('datePaiement')}" th:errors="*{datePaiement}"></div>
+							
+			<div class="mb-3">
+			    <label for="typePaiement">Type de paiement</label><br>
+			    <select id="typePaiement" th:field="*{typePaiement}" required>
+			        <option value="" disabled selected>Sélectionner le type de paiement</option>
+			        <option th:each="type : ${typesPaiement}" 
+			                th:value="${type}" 
+			                th:text="${type}">
+			        </option>
+			    </select>
+			    <div th:if="${#fields.hasErrors('typePaiement')}" th:errors="*{typePaiement}"></div>
+			</div>
+            
+            <div class="mb-4">
+                <button type="submit">Enregistrer</button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ChampionSpark - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

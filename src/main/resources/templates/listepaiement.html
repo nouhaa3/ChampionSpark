@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des paiements</title>
+    <link rel="stylesheet" href="/styles.css">
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="/membres">Nos Membres</a></li>
+            <li><a href="/activites">Nos Activités</a></li>
+            <li><a href="/inscriptions">Gestion des Inscriptions</a></li>
+            <li><a href="/paiements">Gestion des Paiement</a></li>
+            <li><a href="/salles">Salles Disponibles</a></li>
+            <li><a href="/reservations">Gestion de Réservations</a></li>
+            <li><a href="/logout">Se Déconnecter</a></li>
+        </ul>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+		<br>
+        <h1>Liste des paiements</h1>
+    </section>
+
+    <!-- Table for Listing Activities -->
+    <div class="table-container">
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Membre</th>
+                    <th>Montant</th>
+                    <th>Date de paiement</th>
+					<th>Type de paiement</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="paiement : ${listPaiements}">
+                    <td>
+						<span th:text="${paiement.membre.nom} + ' ' + ${paiement.membre.prenom}"></span>
+					</td>
+                    <td th:text="${paiement.montant}">
+                    <td th:text="${paiement.datePaiement}"></td>
+					<td th:text="${paiement.typePaiement}"></td>
+                    <td>
+                        <a th:href="@{/paiements/edit/{idpaiem}(idpaiem=${paiement.idpaiem})}" class="btn btn-warning btn-sm">Modifier</a>
+                        <a th:href="@{/paiements/delete/{idpaiem}(idpaiem=${paiement.idpaiem})}" class="btn btn-danger btn-sm"
+                           onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette activité ?')">Supprimer</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br><br>
+    
+    <!-- Add New Activity Button -->
+    <div class="add-button-container">
+        <a href="/paiements/ajouter" class="add-button">Ajouter un nouveau paiement</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

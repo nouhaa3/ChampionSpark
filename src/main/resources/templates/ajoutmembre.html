@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>nouveau membre</title>
+    <link rel="stylesheet" href="/styles.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<!-- Navbar -->
+	<nav class="navbar">
+		<ul class="nav-links">
+			<li><a href="/membres">Nos Membres</a></li>			
+			<li><a href="/activites">Nos Activités</a></li>
+		    <li><a href="/inscriptions">Gestion des Inscriptions</a></li>
+		    <li><a href="/paiements">Gestion des Paiement</a></li>
+		    <li><a href="/salles">Salles Disponibles</a></li>
+		    <li><a href="/reservations">Gestion de Réservations</a></li>
+		    <li><a href="/logout">Se Déconnecter</a></li>
+		</ul>
+	</nav>
+		
+	<section class="introduction">
+		<br>
+		<h1>Ajouter un nouveau membre</h1>
+	</section>
+			
+    <div class="container mt-5">
+		
+		<form th:action="@{/membres/save}" th:object="${membre}" method="post">
+			<div class="name-row">
+			    <div class="mb-3">
+			        <label for="nom">Nom</label>
+			        <input type="text" id="nom" th:field="*{nom}" required />
+			    </div>
+			    <div class="mb-3">
+			        <label for="prenom">Prénom</label>
+			        <input type="text" id="prenom" th:field="*{prenom}" required /><br><br>
+			    </div>
+			</div>
+			<div class="mb-3">
+			    <label for="email">Email</label>
+			    <input type="email" id="email" th:field="*{email}" required /><br><br>
+			</div>
+			
+			<div class="mb-3">
+		        <label for="telephone">Téléphone</label>
+		        <input type="text" id="telephone" th:field="*{telephone}" required/><br><br>
+			</div>
+			
+			<div class="mb-3">
+		        <label for="dateNaissance">Date de naissance</label>
+		        <input type="date" id="dateNaissance" th:field="*{dateNaissance}" required/><br><br>
+			</div>
+			
+			<div class="mb-4">
+		        <button type="submit">Enregistrer</button>
+			</div>
+		</form>
+    </div>
+	
+	<!-- Footer -->
+	<footer>
+	    <p>&copy; 2024 ChampionSpark - Tous droits réservés</p>
+	</footer>
+</body>
+</html>

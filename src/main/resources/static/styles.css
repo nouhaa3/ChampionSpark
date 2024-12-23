@@ -1,0 +1,693 @@
+/* Global Styles */
+body {
+	font-family: system-ui, -apple-system, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	background: url('/background.png');
+    background-size: cover;
+    background-position: center;
+	background-attachment: fixed;
+}
+
+.background-video {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -2; 
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+ 	left: 0;
+  	width: 100%;
+ 	height: 100%;
+ 	background: rgba(0, 0, 0, 0.5); 
+	z-index: -1; 
+}
+	
+.get-started-btn {
+    background-color: rgb(255, 255, 255); 
+    color: rgb(128, 128, 128); 
+    padding: 15px 32px; 
+    font-size: 16px; 
+    font-weight: bold;
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.3s; 
+}
+
+/* Effet de survol */
+.get-started-btn:hover {
+    background-color: rgb(192, 192, 192);
+    transform: scale(1.05); 
+}
+
+/* Effet au clic */
+.get-started-btn:active {
+    background-color: rgb(128, 128, 128); 
+    transform: scale(1);
+}
+	
+/* Navbar Styles */
+.navbar {
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	font-size: 16px;
+	color: white;
+	padding: 17px;
+	position: fixed;
+	width: 100%;
+	margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 1000;
+	transition: background-color 0.3s ease; 
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.6); 
+}
+
+.navbar.scrolled .nav-links li a {
+    color: #000000;  
+}
+
+.navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+	align-items: center;
+}
+
+.navbar .nav-links li {
+	margin-right: 20px;
+    margin-left: 20px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar .nav-links li a:hover {
+    color: #000;
+}
+
+/* Section Introduction pour la page home */
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0 20px;
+    color: white;
+}
+
+.welcome h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.welcome p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Section Introduction */
+.introduction {
+    text-align: center;
+    padding: 50px 20px;
+    color: white;
+}
+
+.introduction h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.introduction p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Activités disponibles */
+.activities {
+    text-align: center;
+    padding: 50px 20px;
+    color: white;
+}
+
+.activities h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.activities p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.activity-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.activity {
+    text-align: center;
+    width: 16%; 
+    margin: 5px;
+	background-color: rgba(255, 255, 255, 0.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.activity img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.activity h3 {
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.activity p {
+    font-size: 14px;
+    color: whitesmoke;
+}
+
+/* Section Contact */
+.contact {
+    text-align: center;
+    padding: 50px 20px;
+    color: white;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.contact h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.name-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.name-row .mb-3 {
+    flex: 1;
+}
+
+.name-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.contact-form input {
+    width: 32%; 
+}
+
+.contact-form textarea {
+    width: 96%;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: lightgray;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: gray;
+}
+
+/* Conteneur du tableau */
+.table-container {
+    width: 80%; 
+    margin: 30px auto; 
+    text-align: center;
+	font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+.table-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+table {
+    width: 100%; 
+    border-collapse: separate; 
+    margin: 20px 0;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th {
+    background-color: lightgray;
+    color: darkslategray;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+table td {
+    padding: 12px 10px;
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Boutons d'action */
+button {
+    padding: 8px 15px;
+    background-color: gray;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: gray
+}
+
+button:nth-child(2) {
+    background-color: lightgray;
+}
+
+button:nth-child(2):hover {
+    background-color: lightgray;
+}
+
+.add-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 10%;
+}
+
+.add-button {
+    padding: 12px 20px;
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: gray;
+}
+
+.mb-4 {
+    text-align: right;
+}
+
+/* Style pour les boutons */
+.btn {
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Bouton Modifier */
+.btn-warning {
+    background-color: #ffc107; /* Couleur jaune */
+    color: white;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800; /* Couleur jaune foncé */
+    transform: scale(1.05);
+}
+
+.btn-warning:active {
+    background-color: #c69500;
+    transform: scale(1);
+}
+
+/* Bouton Supprimer */
+.btn-danger {
+    background-color: #dc3545; /* Couleur rouge */
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Couleur rouge foncé */
+    transform: scale(1.05);
+}
+
+.btn-danger:active {
+    background-color: #bd2130;
+    transform: scale(1);
+}
+
+/* Ajouter un espacement entre les boutons */
+.btn + .btn {
+    margin-left: 10px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 15px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    color: gray;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="date"]:focus {
+    border-color: gray;
+    outline: none;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: white;
+    transition: border-color 0.3s;
+    appearance: none; 
+}
+
+select:focus {
+    border-color: gray;
+    outline: none;
+}
+
+select:disabled {
+    background-color: #f5f5f5; 
+    cursor: not-allowed;
+}
+
+
+button {
+    background-color: lightgray;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: gray;
+}
+
+button:active {
+    background-color: dimgray;
+}
+
+/* Container pour la liste des salles */
+.salle-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+/* Carte de chaque salle */
+.salle {
+    width: 300px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Image de la salle */
+.salle-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Détails de la salle */
+.salle-details {
+    padding: 10px;
+}
+
+.salle-details h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Informations sur la salle */
+.salle-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Élément d'information */
+.info-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1em;
+}
+
+/* Icônes */
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Bouton de réservation */
+.btn-reservation {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 20px;
+    background-color: lightgray;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-reservation:hover {
+    background-color: gray;
+}
+
+/* Styles pour la section introduction */
+.introduction {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.introduction h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.introduction p {
+    font-size: 1.2em;
+    color: gray;
+}
+
+/* Conteneur principal pour les salles */
+.containersalle {
+    margin-top: 5px;
+    margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+/* Row (ligne) */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    justify-content:space-evenly; /* Aligne les cartes uniformément */
+}
+
+/* Card de chaque salle */
+.salle-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column; /* Pour empiler les éléments verticalement */
+    justify-content: space-between; /* Pour espacer les éléments de manière égale */
+    height: 100%; /* Remplissage uniforme */
+}
+
+/* Card au survol */
+.salle-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image de la salle */
+.salle-image {
+    width: 100%;
+    height: 150px; /* Ajustez la hauteur si nécessaire */
+    object-fit: cover; /* Coupe ou adapte l'image */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Détails de la salle */
+.salle-details {
+    text-align: left;
+}
+
+/* Titre des détails */
+.salle-details h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.salle-details p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Espacement des actions */
+.salle-actions {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.salle-actions a {
+    margin: 0 5px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.salle-actions a.btn-danger {
+    background-color: #dc3545;
+}
+
+
+/* Footer Styles */
+footer {
+    text-align: center;
+	background-color: rgba(255, 255, 255, 0.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 1px;
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 2px;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+footer.scrolled {
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+footer.scrolled {
+	color: #000000; 
+}

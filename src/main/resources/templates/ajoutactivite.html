@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>nouvelle activité</title>
+    <link rel="stylesheet" href="/styles.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="/membres">Nos Membres</a></li>
+            <li><a href="/activites">Nos Activités</a></li>
+            <li><a href="/inscriptions">Gestion des Inscriptions</a></li>
+            <li><a href="/paiements">Gestion des Paiements</a></li>
+            <li><a href="/salles">Salles Disponibles</a></li>
+            <li><a href="/reservations">Gestion de Réservations</a></li>
+            <li><a href="/logout">Se Déconnecter</a></li>
+        </ul>
+    </nav>
+    
+    <section class="introduction">
+		<br>
+        <h1>Ajouter une nouvelle activité</h1>
+    </section>
+    
+    <div class="container mt-5">
+        <!-- Formulaire d'ajout d'activité -->
+        <form th:action="@{/activites/save}" th:object="${activite}" method="post">
+            <div class="mb-3">
+                <label for="nom">Nom de l'activité</label><br>
+                <input type="text" id="nom" th:field="*{nom}" required/><br><br>
+            </div>
+            
+            <div class="mb-3">
+                <label for="description">Description</label><br>
+                <input type="text" id="description" th:field="*{description}" required></input><br><br>
+            </div>
+            
+            <div class="mb-3">
+                <label for="horaire">Horaire</label><br>
+                <input type="text" id="horaire" th:field="*{horaire}" required/><br><br>
+            </div>
+            
+            <div class="mb-3">
+                <label for="duree">Durée (en minutes)</label><br>
+                <input type="text" id="duree" th:field="*{duree}" required/><br><br>
+            </div>
+            
+            <div class="mb-4">
+                <button type="submit">Enregistrer</button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ChampionSpark - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

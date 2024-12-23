@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>nouvelle reservation</title>
+    <link rel="stylesheet" href="/styles.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="/membres">Nos Membres</a></li>
+            <li><a href="/activites">Nos Activités</a></li>
+            <li><a href="/inscriptions">Gestion des Inscriptions</a></li>
+            <li><a href="/paiements">Gestion des Paiements</a></li>
+            <li><a href="/salles">Salles Disponibles</a></li>
+            <li><a href="/reservations">Gestion de Réservations</a></li>
+            <li><a href="/logout">Se Déconnecter</a></li>
+        </ul>
+    </nav>
+    
+    <section class="introduction">
+		<br>
+        <h1>Ajouter une nouvelle reservation</h1>
+    </section>
+    
+    <div class="container mt-5">
+        <!-- Formulaire d'ajout d'activité -->
+        <form th:action="@{/reservations/save}" th:object="${reservation}" method="post">
+            <div class="mb-3">
+                <label for="salle">Salle</label><br>
+				<select id="salle" th:field="*{salle}" required>
+					<option value="" disabled selected>Sélectionner une salle</option>
+					<option th:each="salle : ${salles}" 
+						    th:value="${salle.idsalle}"  
+							th:text="${salle.nom}">
+					</option>
+				</select>
+				<div th:if="${#fields.hasErrors('salle')}" th:errors="*{salle}"></div>
+            </div>
+            
+			<div class="mb-3">
+				<label for="activite">Activité</label><br>
+				<select id="activite" th:field="*{activite}" required>
+					<option value="" disabled selected>Sélectionner une activité</option>
+					<option th:each="activite : ${activites}" 
+							th:value="${activite.idact}"  
+							th:text="${activite.nom}">
+					</option>
+				</select>
+				<div th:if="${#fields.hasErrors('activite')}" th:errors="*{activite}"></div>
+			</div>
+            
+            <div class="mb-3">
+                <label for="dateReservation">Date de la réservation</label><br>
+                <input type="date" id="dateReservation" th:field="*{dateReservation}" required/>
+            </div>
+			<div th:if="${#fields.hasErrors('dateReservation')}" th:errors="*{dateReservation}"></div>
+			
+			<div class="mb-3">
+				<label for="heureDebut">Heure début</label><br>
+				<input type="text" id="heureDebut" th:field="*{heureDebut}" required/>
+			</div>
+			<div th:if="${#fields.hasErrors('heureDebut')}" th:errors="*{heureDebut}"></div>
+						
+			<div class="mb-3">
+				<label for="heureFin">Heure fin</label><br>
+				<input type="text" id="heureFin" th:field="*{heureFin}" required/>
+			</div>
+			<div th:if="${#fields.hasErrors('heureFin')}" th:errors="*{heureFin}"></div>
+            
+            <div class="mb-4">
+                <button type="submit">Enregistrer</button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ChampionSpark - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

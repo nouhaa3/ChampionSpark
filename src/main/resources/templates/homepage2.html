@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChampionSpark - Club Sportif</title>
+    <link rel="stylesheet" href="/styles.css">
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="/membres">Nos Membres</a></li>			
+			<li><a href="/activites">Nos Activités</a></li>
+            <li><a href="/inscriptions">Gestion des Inscriptions</a></li>
+            <li><a href="/paiements">Gestion des Paiement</a></li>
+            <li><a href="/salles">Salles Disponibles</a></li>
+            <li><a href="/reservations">Gestion de Réservations</a></li>
+            <li><a href="/logout">Se Déconnecter</a></li>
+        </ul>
+    </nav>
+		
+	<section class="activities">
+	        <h2>Nos Activités</h2>
+	        <p>Découvrez les différentes activités que nous proposons pour tous les âges et niveaux. 
+				ChampionSpark offre une grande variété d'activités sportives adaptées à vos besoins !</p>
+
+	        <div class="activity-list">
+	            <div class="activity">
+	                <img src="/fitness.png" alt="Fitness">
+	                <h3>Fitness</h3>
+	                <p>Améliorez votre forme physique avec nos cours de fitness dynamiques et adaptés à tous les niveaux.</p>
+	            </div>
+	            <div class="activity">
+	                <img src="/football.png" alt="Football">
+	                <h3>Football</h3>
+	                <p>Rejoignez nos équipes de football pour des matchs et des entraînements. Compétition ou loisir, il y a une place pour vous!</p>
+	            </div>
+	            <div class="activity">
+	                <img src="/yoga.png" alt="Yoga">
+	                <h3>Yoga</h3>
+	                <p>Retrouvez équilibre et sérénité avec nos cours de yoga, conçus pour tous, du débutant au pratiquant avancé.</p>
+	            </div>
+				<div class="activity">
+				    <img src="/baskteball.png" alt="Basketball">
+				    <h3>Basketball</h3>
+					<p>Venez jouer au basketball et perfectionner vos techniques avec nos coachs expérimentés.</p>
+				</div>
+				<div class="activity">
+				    <img src="/gymnastics.png" alt="Gymnastique">
+				    <h3>Gymnastique</h3>
+				    <p>Améliorez votre flexibilité et force avec nos séances de gymnastique adaptées à tous les niveaux.</p>
+				</div>
+				<div class="activity">
+				    <img src="/tennis.png" alt="Tennis">
+				    <h3>Tennis</h3>
+				    <p>Participez à nos matchs de tennis pour développer vos compétences techniques et votre agilité.</p>
+				</div>
+				<div class="activity">
+				    <img src="/boxing.png" alt="Boxe">
+				    <h3>Kick Boxing</h3>
+				    <p>Découvrez la boxe et améliorez votre force mentale et physique avec nos entraînements intensifs.</p>
+				</div>
+				<div class="activity">
+				    <img src="/volleyball.png" alt="Volleyball">
+				    <h3>Volleyball</h3>
+				    <p>Rejoignez nos matchs de volleyball pour une expérience sportive amusante et stimulante.</p>
+				</div>
+	            <div class="activity">
+	                <img src="/cycling.png" alt="Cyclisme">
+	                <h3>Cyclisme</h3>
+	                <p>Participez à nos sorties cyclistes et défiez vos amis dans des parcours stimulants et variés.</p>
+	            </div>
+	            <div class="activity">
+	                <img src="/natation.png" alt="Natation">
+	                <h3>Natation</h3>
+	                <p>Profitez de notre piscine pour des séances de natation, que ce soit pour votre bien-être ou pour vous entraîner.</p>
+	            </div>
+	        </div>
+	    </section>
+		
+		<!-- Section Contact -->
+		<section id="contact" class="contact">
+		    <h2>Contactez-Nous</h2>
+		    <p>Vous avez des questions ou des demandes ? Remplissez le formulaire ci-dessous, et nous vous répondrons rapidement.</p>
+			<form class="contact-form">
+			    <div class="form-row">
+			        <input type="text" id="name" name="name" placeholder="Nom" required>
+			        <input type="email" id="email" name="email" placeholder="Email" required>
+			        <input type="text" id="subject" name="subject" placeholder="Objet" required>
+			    </div>
+
+			    <textarea id="message" name="message" placeholder="Taper votre message" rows="5" required></textarea>
+
+			    <button type="submit">Envoyer</button>
+			</form>
+			<br><br>
+		</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ChampionSpark - Tous droits réservés</p>
+    </footer>
+</body>
+
+</html>

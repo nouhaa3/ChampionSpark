@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>membres</title>
+    <link rel="stylesheet" href="/styles.css">
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="/membres">Nos Membres</a></li>
+            <li><a href="/activites">Nos Activités</a></li>
+            <li><a href="/inscriptions">Gestion des Inscriptions</a></li>
+            <li><a href="/paiements">Gestion des Paiement</a></li>
+            <li><a href="/salles">Salles Disponibles</a></li>
+            <li><a href="/reservations">Gestion de Réservations</a></li>
+            <li><a href="/logout">Se Déconnecter</a></li>
+        </ul>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+		<br>
+        <h1>Liste des membres</h1>
+    </section>
+
+    <!-- Table for Listing Members -->
+    <div class="table-container">
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Téléphone</th>
+                    <th>Date de naissance</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="membre : ${listMembres}">
+                    <td th:text="${membre.nom}"></td>
+                    <td th:text="${membre.prenom}"></td>
+                    <td th:text="${membre.email}"></td>
+                    <td th:text="${membre.telephone}"></td>
+                    <td th:text="${membre.dateNaissance}"></td>
+                    <td>
+                        <a th:href="@{/membres/edit/{idmem}(idmem=${membre.idmem})}" class="btn btn-warning btn-sm">Modifier</a>
+                        <a th:href="@{/membres/delete/{idmem}(idmem=${membre.idmem})}" class="btn btn-danger btn-sm"
+                           onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce membre ?')">Supprimer</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br><br>
+    
+    <!-- Add New Member Button -->
+    <div class="add-button-container">
+        <a href="/membres/ajouter" class="add-button">Ajouter un nouveau membre</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
